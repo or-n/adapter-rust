@@ -7,9 +7,9 @@ edition = "2021"
 
 [dependencies]
 rodio = "0.17.1"
-wave = { path = "../../utils/wave" }
-array = { path = "../../utils/array" }
-num = { path = "../../utils/num" }
+wave = { git = "https://github.com/or-n/rust-minimalist-utils" }
+array = { git = "https://github.com/or-n/rust-minimalist-utils" }
+num = { git = "https://github.com/or-n/rust-minimalist-utils" }
 
 [[example]]
 name = "melody1"

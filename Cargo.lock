@@ -111,6 +111,7 @@ dependencies = [
 [[package]]
 name = "array"
 version = "0.1.0"
+source = "git+https://github.com/or-n/rust-minimalist-utils#d530dbd08aaf2f7b1581cc67103dae9291de7308"
 dependencies = [
  "itertools",
 ]
@@ -1125,6 +1126,7 @@ dependencies = [
 [[package]]
 name = "num"
 version = "0.1.0"
+source = "git+https://github.com/or-n/rust-minimalist-utils#d530dbd08aaf2f7b1581cc67103dae9291de7308"
 dependencies = [
  "array",
 ]
@@ -1886,6 +1888,7 @@ checksum = "ca6ad05a4870b2bf5fe995117d3728437bd27d7cd5f06f13c17443ef369775a1"
 [[package]]
 name = "wave"
 version = "0.1.0"
+source = "git+https://github.com/or-n/rust-minimalist-utils#d530dbd08aaf2f7b1581cc67103dae9291de7308"
 dependencies = [
  "array",
  "num",

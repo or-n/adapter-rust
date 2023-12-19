@@ -2,10 +2,10 @@
 extern crate array;
 
 use array::samples::*;
-use num::{ratio::*, invert::*};
+use num::{operation::invert::*, ratio::f32::*};
 use wave::*;
 
-use std::{ops::Add, f32::consts::TAU};
+use std::{f32::consts::TAU, ops::Add};
 
 macro_rules! s {
     ($x:expr) => {
@@ -19,8 +19,7 @@ const TIMES: usize = 32;
 
 pub fn gen(sample_rate: f32) -> [f32; MELODY] {
     let factor = 0.5 * TAU * sample_rate.invert();
-    let sine = |pitch: f32| move |x: usize|
-        (x as f32 * pitch * factor).sin() + 1.0; 
+    let sine = |pitch: f32| move |x: usize| (x as f32 * pitch * factor).sin() + 1.0;
     let c = samples!(NOTE, sine(C));
     let e = samples!(NOTE, sine(E));
     let g = samples!(NOTE, sine(G));
@@ -40,7 +39,9 @@ pub fn main() {
     for i in 0..TIMES {
         let r = f32_ratio(i, (TIMES / 2) - 1);
         let volume = 1.0 + (r * TAU).sin() * 0.5;
-        subsume(&mut data[MELODY * i..], &melody, Add::add, |x, _| x * volume);
+        subsume(&mut data[MELODY * i..], &melody, Add::add, |x, _| {
+            x * volume
+        });
     }
     speaker::play(DEFAULT_SAMPLE_RATE, &data);
 }
