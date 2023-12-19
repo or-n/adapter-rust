@@ -1,0 +1,16 @@
+[package]
+name = "speaker"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rodio = "0.17.1"
+wave = { path = "../../utils/wave" }
+array = { path = "../../utils/array" }
+num = { path = "../../utils/num" }
+
+[[example]]
+name = "melody1"
+path = "examples/melody1.rs"
