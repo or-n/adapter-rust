@@ -2,5 +2,5 @@
 members = [
     "speaker",
     "window",
-    "gpu",
+    "gpu", "frames",
 ]
