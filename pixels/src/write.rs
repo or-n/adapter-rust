@@ -17,5 +17,5 @@ pub fn f32_array(
     )
     .ok_or(Error::Dimensions)?;
     let img = image::DynamicImage::ImageRgba32F(img).to_rgba8();
-    Ok(img.save_with_format(output_file, image::ImageFormat::Png))
+    Ok(img.save_with_format(output_file, image::ImageFormat::Jpeg))
 }
