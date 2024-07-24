@@ -8,7 +8,7 @@ pub fn save(
     clip: Option<&super::clip::Clip>,
 ) -> std::io::Result<std::process::ExitStatus> {
     let input_format =
-        format!("{}_%0{}d.png", input_file, frame_count.ilog10() + 1);
+        format!("{}_%0{}d.jpg", input_file, frame_count.ilog10() + 1);
     let mut command = std::process::Command::new("ffmpeg");
     command
         .args(&["-y"])

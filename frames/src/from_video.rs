@@ -6,7 +6,7 @@ pub fn save(
     frame_count: u32,
 ) -> std::io::Result<std::process::ExitStatus> {
     let output_format =
-        format!("{}_%0{}d.png", output_file, frame_count.ilog10() + 1);
+        format!("{}_%0{}d.jpg", output_file, frame_count.ilog10() + 1);
     std::process::Command::new("ffmpeg")
         .args(&["-i", input_file])
         .args(&["-frames:v", &frame_count.to_string()])
