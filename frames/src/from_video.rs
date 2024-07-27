@@ -10,6 +10,7 @@ pub fn save(
     std::process::Command::new("ffmpeg")
         .args(&["-i", input_file])
         .args(&["-frames:v", &frame_count.to_string()])
+        .args(&["-q:v", "2"])
         .args(&[&output_format])
         .stdin(Stdio::null())
         .stdout(Stdio::null())
