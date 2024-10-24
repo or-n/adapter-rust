@@ -5,7 +5,7 @@ pub fn save(
     output_file: &str,
     fps: &str,
     frame_count: u32,
-    clip: Option<&super::clip::Clip>,
+    clip: Option<range::MinSize<u32>>,
 ) -> std::io::Result<std::process::ExitStatus> {
     let input_format =
         format!("{}_%0{}d.jpg", input_file, frame_count.ilog10() + 1);
@@ -18,8 +18,8 @@ pub fn save(
         .args(&["-pix_fmt", "yuv420p"]);
     if let Some(clip) = clip {
         command
-            .args(&["-start_number", &clip.start.to_string()])
-            .args(&["-frames:v", &clip.length.to_string()]);
+            .args(&["-start_number", &clip.min.to_string()])
+            .args(&["-frames:v", &clip.size.to_string()]);
     }
     command
         .args(&[&output_file])
