@@ -1,4 +1,3 @@
-pub mod clip;
 pub mod count;
 pub mod from_video;
 pub mod per_second;
